@@ -10,28 +10,41 @@ const artistName = document.getElementById("artist-name");
 const audioPlayer = document.getElementById("audio-player");
 const playlistsDiv = document.getElementById("playlists");
 const toggleBtn = document.getElementById("toggle");
+const searchBar = document.getElementById("search-bar"); // Added search bar element
 
 // Fetch songs from JSON
 fetch("songs.json")
   .then((response) => response.json())
   .then((data) => {
     songs = data;
-    showSongs();
+    showSongs(); // Initially load all songs
   })
   .catch((error) => console.error("Error loading songs:", error));
 
-function showSongs(genre = "all") {
+// Show songs function with search filter support
+function showSongs(genre = "all", searchQuery = "") {
   songsList.innerHTML = "";
-  const filteredSongs =
-    genre === "all" ? songs : songs.filter((song) => song.genre === genre);
+
+  // Filter songs based on genre and search query
+  const filteredSongs = songs
+    .filter((song) => genre === "all" || song.genre === genre) // Filter by genre
+    .filter((song) => {
+      return (
+        song.name.toLowerCase().includes(searchQuery) || // Match by song name
+        song.artist.toLowerCase().includes(searchQuery) // Match by artist name
+      );
+    });
+
+  // Render the filtered songs list
   filteredSongs.forEach((song, index) => {
     const button = document.createElement("button");
     button.textContent = `${song.name} - ${song.artist}`;
-    button.addEventListener("click", () => selectSong(index));
+    button.addEventListener("click", () => selectSong(index)); // Play song when clicked
     songsList.appendChild(button);
   });
 }
 
+// Function to handle selecting a song to play
 function selectSong(index) {
   currentSongIndex = index;
   const song = songs[index];
@@ -42,16 +55,19 @@ function selectSong(index) {
   audioPlayer.play();
 }
 
+// Event listener for the "Next" button
 document.getElementById("next").addEventListener("click", () => {
   currentSongIndex = (currentSongIndex + 1) % songs.length;
   selectSong(currentSongIndex);
 });
 
+// Event listener for the "Prev" button
 document.getElementById("prev").addEventListener("click", () => {
   currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
   selectSong(currentSongIndex);
 });
 
+// Event listener for creating a new playlist
 document.getElementById("create-playlist").addEventListener("click", () => {
   const playlistName = document
     .getElementById("new-playlist-name")
@@ -62,6 +78,7 @@ document.getElementById("create-playlist").addEventListener("click", () => {
   }
 });
 
+// Function to render the playlists
 function renderPlaylists() {
   playlistsDiv.innerHTML = "";
   playlists.forEach((playlist, index) => {
@@ -72,6 +89,7 @@ function renderPlaylists() {
   });
 }
 
+// Event listener for adding a song to a playlist
 document.getElementById("add-to-playlist").addEventListener("click", () => {
   const playlistName = prompt("Enter playlist name:");
 
@@ -86,7 +104,7 @@ document.getElementById("add-to-playlist").addEventListener("click", () => {
       alert(`${currentSong.name} is already in "${playlist.name}"`);
     }
   } else {
-    // If playlist doesn't exist
+    // If playlist doesn't exist, prompt to create one
     const createNew = confirm(
       `Playlist "${playlistName}" doesn't exist. Do you want to create it?`
     );
@@ -104,6 +122,7 @@ document.getElementById("add-to-playlist").addEventListener("click", () => {
   }
 });
 
+// Function to show songs from a selected playlist
 function showPlaylistSongs(index) {
   const playlist = playlists[index];
   songsList.innerHTML = "";
@@ -115,9 +134,24 @@ function showPlaylistSongs(index) {
   });
 }
 
+// Event listener for dark mode toggle
 toggleBtn.addEventListener("change", () => {
   document.body.classList.toggle("dark-mode");
 });
 
-// Initialize
-genreFilter.addEventListener("change", (e) => showSongs(e.target.value));
+// Event listener for genre filter change
+genreFilter.addEventListener("change", (e) => {
+  const selectedGenre = e.target.value;
+  showSongs(selectedGenre, searchBar.value); // Update song list based on genre and search query
+});
+
+// Event listener for search bar input
+searchBar.addEventListener("input", () => {
+  const searchQuery = searchBar.value.toLowerCase(); // Get search query
+  showSongs(genreFilter.value, searchQuery); // Filter songs by genre and search query
+});
+
+// Initialize the song list with all songs when the page loads
+document.addEventListener("DOMContentLoaded", () => {
+  showSongs();
+});

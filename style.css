@@ -7,6 +7,29 @@ body{
     font-style: normal;
 }
 
+#search-container{
+    background-color: white;
+    text-align: center;
+    margin: 6px;
+    height: 30px;
+}
+
+#search-container input{
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    width: 50%;
+    height: 100%;
+    text-align: center; 
+}
+
+body.dark-mode #search-container  {
+    background-color: #1A1A1D;
+    color: #fff;
+    transition: 0.3s;
+}
+
 header {
     display: flex;
     height: 50px;
