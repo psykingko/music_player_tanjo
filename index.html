@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanjo</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div id="titleDiv">
+            <span id="tanjo">Tanjo</span>
+            <!-- <span id="logoImg"><img src="assets/favicon-16x16.png" alt=""></span> -->
+        </div>
+        <div class="DMcontainer">
+            <input type="checkbox" name="" id="toggle">
+            <label for="toggle" class="slider"></label>
+        </div>
+    </header>
+    <div class="container">
+
+        <div id="all-songs-section">
+            <h2>All Songs</h2>
+            <select id="genre-filter">
+                <option value="all">All</option>
+                <option value="pop">Pop</option>
+                <option value="rock">Rock</option>
+                <option value="classical">Classical</option>
+            </select>
+            <div id="songs-list"></div>
+        </div>
+
+        <div id="song-card">
+            <img id="song-image" src="" alt="Song Image">
+            <h3 id="song-name">Song Name</h3>
+            <p id="artist-name">Artist Name</p>
+            <audio id="audio-player" controls></audio>
+            <div id="controls">
+                <button id="prev">Prev</button>
+                <!-- <button id="play">Play</button> -->
+                <button id="next">Next</button>
+                <button id="add-to-playlist">Add to Playlist</button>
+            </div>
+        </div>
+
+        <div id="playlist-section">
+            <h2>Playlists</h2>
+            <input type="text" id="new-playlist-name" placeholder="Enter playlist name">
+            <button id="create-playlist">Create Playlist</button>
+            <div id="playlists"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

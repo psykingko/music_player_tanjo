@@ -1,0 +1,123 @@
+[
+    {
+      "id": 1,
+      "name": "Shape Of You",
+      "artist": "Ed Sheeran",
+      "img": "assets/shape.jpg",
+      "genre": "pop",
+      "source": "assets/shape.mp3"
+    },
+    {
+      "id": 2,
+      "name": "Blinding Lights",
+      "artist": "The Weeknd",
+      "img": "assets/blinding.jpg",
+      "genre": "pop",
+      "source": "assets/blinding.mp3"
+    },
+    {
+      "id": 3,
+      "name": "Levitating",
+      "artist": "Dua Lipa",
+      "img": "assets/levitating.jpg",
+      "genre": "pop",
+      "source": "assets/levitating.mp3"
+    },
+    {
+      "id": 4,
+      "name": "Uptown Funk",
+      "artist": "Mark Ronson ft. Bruno Mars",
+      "img": "assets/uptown.jpg",
+      "genre": "pop",
+      "source": "assets/uptown.mp3"
+    },
+    {
+      "id": 5,
+      "name": "Bad Guy",
+      "artist": "Billie Eilish",
+      "img": "assets/badguy.jpg",
+      "genre": "pop",
+      "source": "assets/badguy.mp3"
+    },
+    {
+      "id": 6,
+      "name": "Wonderwall",
+      "artist": "Oasis",
+      "img": "assets/wonder.jpg",
+      "genre": "rock",
+      "source": "assets/wonder.mp3"
+    },
+    {
+      "id": 7,
+      "name": "Smells Like Teen Spirit",
+      "artist": "Nirvana",
+      "img": "assets/spirit.jpg",
+      "genre": "rock",
+      "source": "assets/spirit.mp3"
+    },
+    {
+      "id": 8,
+      "name": "Hotel California",
+      "artist": "Eagles",
+      "img": "assets/hotel.jpg",
+      "genre": "rock",
+      "source": "assets/hotel.mp3"
+    },
+    {
+      "id": 9,
+      "name": "Bohemian Rhapsody",
+      "artist": "Queen",
+      "img": "assets/bohemian.jpg",
+      "genre": "rock",
+      "source": "assets/bohemian.mp3"
+    },
+    {
+      "id": 10,
+      "name": "Sweet Child O' Mine",
+      "artist": "Guns N' Roses",
+      "img": "assets/sweetchild.jpg",
+      "genre": "rock",
+      "source": "assets/sweetchild.mp3"
+    },
+    {
+      "id": 11,
+      "name": "Canon in D",
+      "artist": "Pachelbel",
+      "img": "assets/cannon.jpg",
+      "genre": "classical",
+      "source": "assets/canon.mp3"
+    },
+    {
+      "id": 12,
+      "name": "Moonlight Sonata",
+      "artist": "Beethoven",
+      "img": "assets/moonlight.jpg",
+      "genre": "classical",
+      "source": "assets/moonlight.mp3"
+    },
+    {
+      "id": 13,
+      "name": "The Four Seasons: Spring",
+      "artist": "Vivaldi",
+      "img": "assets/spring.jpg",
+      "genre": "classical",
+      "source": "assets/spring.mp3"
+    },
+    {
+      "id": 14,
+      "name": "Clair de Lune",
+      "artist": "Debussy",
+      "img": "assets/clair.jpg",
+      "genre": "classical",
+      "source": "assets/clair.mp3"
+    },
+    {
+      "id": 15,
+      "name": "Swan Lake",
+      "artist": "Tchaikovsky",
+      "img": "assets/swanlake.jpg",
+      "genre": "classical",
+      "source": "assets/swanlake.mp3"
+    }
+  ]
+  
